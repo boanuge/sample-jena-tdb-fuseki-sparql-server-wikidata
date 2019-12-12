@@ -1,4 +1,4 @@
-Apache Jena Fuseki is a SPARQL server.
+## Apache Jena Fuseki is a SPARQL server.
 
 It can run as a operating system service, as a Java web application (WAR file), and as a standalone server.
 
@@ -12,7 +12,7 @@ If a TDB dataset needs to be used between multiple applications, please use our 
 
 
 
-TDB Java API - https://jena.apache.org/documentation/tdb/java_api.html
+## TDB Java API - https://jena.apache.org/documentation/tdb/java_api.html
 
 Fuseki Quickstart - https://jena.apache.org/documentation/fuseki2/fuseki-quick-start.html
 
@@ -20,7 +20,7 @@ Running Fuseki - https://jena.apache.org/documentation/fuseki2/fuseki-run.html
 Configuring Fuseki - https://jena.apache.org/documentation/fuseki2/fuseki-configuration.html
 
 
-Note: That I've used VER as a placeholder for the Fuseki version here since that value will depend on which version of Fuseki you have downloaded. For reference at time of writing this answer the latest version is 1.0.2. This command launches Fuseki against the TDB database located in /path/to/database with the dataset path of /ds. Therefore you can point your chosen SPARQL client at http://localhost:3030/ds/query to make queries or http://localhost:3030/ds/update to make updates.
+## Note: That I've used VER as a placeholder for the Fuseki version here since that value will depend on which version of Fuseki you have downloaded. For reference at time of writing this answer the latest version is 1.0.2. This command launches Fuseki against the TDB database located in /path/to/database with the dataset path of /ds. Therefore you can point your chosen SPARQL client at http://localhost:3030/ds/query to make queries or http://localhost:3030/ds/update to make updates.
 
 fuseki-server [--mem | --loc=DIR] [[--update] /NAME]
 fuseki-server --config=CONFIG
@@ -33,12 +33,11 @@ $ java -jar fuseki-server.jar --config=path/to/configuration/file
 Reference links:
 
 https://stackoverflow.com/questions/24798024/how-i-can-use-fuseki-with-jena-tdb
-
 https://medium.com/@rrichajalota234/how-to-apache-jena-fuseki-3-x-x-1304dd810f09
 
 
 
-[Maven for Jena Fuseki]
+## [Maven for Jena Fuseki]
 
 <!-- http://jena.apache.org/download/index.cgi -->
  <dependency>
@@ -54,16 +53,16 @@ https://medium.com/@rrichajalota234/how-to-apache-jena-fuseki-3-x-x-1304dd810f09
  <version>3.13.1</version>
  </dependency>
 
-Jena Library Files:
+## Jena Library Files:
 
 apache-jena-3.13.1.zip
 apache-jena-fuseki-3.13.1.zip
 jena-3.13.1-source-release.zip
 
 
-SPARQL Standards - https://jena.apache.org/documentation/fuseki2/rdf-sparql-standards.html
-The relevant SPARQL 1.1 standards are:
+## SPARQL Standards - https://jena.apache.org/documentation/fuseki2/rdf-sparql-standards.html
 
+The relevant SPARQL 1.1 standards are:
 SPARQL 1.1 Query
 SPARQL 1.1 Update
 SPARQL 1.1 Protocol
@@ -71,9 +70,8 @@ SPARQL 1.1 Graph Store HTTP Protocol
 SPARQL 1.1 Query Results JSON Format
 SPARQL 1.1 Query Results CSV and TSV Formats
 SPARQL Query Results XML Format
-RDF Standards
-Some RDF 1.1 standards
 
+RDF Standards, Some RDF 1.1 standards:
 RDF 1.1 Turtle
 RDF 1.1 Trig
 RDF 1.1 N-Triples
