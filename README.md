@@ -11,18 +11,24 @@ If a TDB dataset needs to be used between multiple applications, please use our 
 Fuseki Quickstart - https://jena.apache.org/documentation/fuseki2/fuseki-quick-start.html
 
 Running Fuseki - https://jena.apache.org/documentation/fuseki2/fuseki-run.html
+
 Configuring Fuseki - https://jena.apache.org/documentation/fuseki2/fuseki-configuration.html
 
 ## Note:
 That I've used VER as a placeholder for the Fuseki version here since that value will depend on which version of Fuseki you have downloaded. For reference at time of writing this answer the latest version is 1.0.2. This command launches Fuseki against the TDB database located in /path/to/database with the dataset path of /ds. Therefore you can point your chosen SPARQL client at http://localhost:3030/ds/query to make queries or http://localhost:3030/ds/update to make updates.
 
 fuseki-server [--mem | --loc=DIR] [[--update] /NAME]
+
 fuseki-server --config=CONFIG
+
 Ubuntu$ java -jar fuseki-server.jar --loc=/path/to/database/folder --update /ds
+
 Windows> java -jar fuseki-server.jar --loc=C:\TDB --update /ds
+
 $ java -jar fuseki-server.jar --config=path/to/configuration/file
 
 Reference links:
+
 https://stackoverflow.com/questions/24798024/how-i-can-use-fuseki-with-jena-tdb
 https://medium.com/@rrichajalota234/how-to-apache-jena-fuseki-3-x-x-1304dd810f09
 
