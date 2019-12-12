@@ -48,7 +48,8 @@ apache-jena-3.13.1.zip
 apache-jena-fuseki-3.13.1.zip
 jena-3.13.1-source-release.zip
 
-## SPARQL Standards - https://jena.apache.org/documentation/fuseki2/rdf-sparql-standards.html
+## SPARQL Standards
+https://jena.apache.org/documentation/fuseki2/rdf-sparql-standards.html
 
 The relevant SPARQL 1.1 standards are:
 SPARQL 1.1 Query
