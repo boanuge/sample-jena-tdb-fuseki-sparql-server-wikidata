@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Implementation-Title: Sample for Ontology Modeling
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: Samsung
+Implementation-Vendor-Id: com.sample.jena
+Build-Jdk: 1.8.0_212
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/JENA_Library_Sample
+Created-By: Maven Integration for Eclipse
+Main-Class: com.sample.jena.OntologyModeling
+
