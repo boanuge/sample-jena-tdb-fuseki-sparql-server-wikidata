@@ -1,8 +1,11 @@
 package com.sample.jena;
 
+import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.Iterator;
+import java.util.List;
 
 import org.apache.jena.ontology.OntModelSpec;
 import org.apache.jena.query.Dataset;
@@ -38,6 +41,7 @@ import org.slf4j.LoggerFactory;
 import com.fasterxml.jackson.databind.MappingIterator;
 import com.fasterxml.jackson.dataformat.csv.CsvMapper;
 import com.fasterxml.jackson.dataformat.csv.CsvParser;
+import com.samsung.ckg.tdb.TDBConnection;
 
 public class OntologyModeling {
 
@@ -281,6 +285,8 @@ public class OntologyModeling {
 		final String namedModel1 = "Model_German_Cars";
 		final String namedModel2 = "Model_US_Cars";
 
+		String modelNameTest = "Any_Named_Model";
+
 		String john = URI + "John";
 		String mike = URI + "Mike";
 		String bill = URI + "Bill";
@@ -319,7 +325,7 @@ public class OntologyModeling {
 		tdb.close();
 
 		TDBConnection tdb1 = new TDBConnection("tdb");
-		List<Statement> result1 = tdb1.getStatements(modelName, null, null, null);
-		System.out.println( modelName + " size: " + result1.size() + "\n\t" + result1 );
+		List<Statement> result1 = tdb1.getStatements(modelNameTest, null, null, null);
+		System.out.println( modelNameTest + " size: " + result1.size() + "\n\t" + result1 );
 	}
 }
