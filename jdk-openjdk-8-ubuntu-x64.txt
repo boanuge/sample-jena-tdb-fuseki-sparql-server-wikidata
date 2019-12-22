@@ -1,0 +1,15 @@
+sudo apt update
+
+sudo apt install default-jre
+sudo apt install default-jdk
+
+sudo apt install openjdk-8-jre-headless
+sudo apt install openjdk-8-jdk
+
+sudo update-alternatives --config java
+# 아래 JDK 번호 선택 #
+/usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java    1081    manual mode
+
+sudo nano /etc/environment
+# 아래 줄 입력 #
+JAVA_HOME="/usr/lib/jvm/java-8-openjdk-amd64"
