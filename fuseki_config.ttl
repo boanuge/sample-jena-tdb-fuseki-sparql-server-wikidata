@@ -1,0 +1,38 @@
+## Licensed under the terms of http://www.apache.org/licenses/LICENSE-2.0
+
+## Fuseki server configuration file for JENA TDB dataset located in: /home/sample/TDB_Directory
+## Fuseki SPARQL endpoint address by this configuration: http://127.0.0.1:3030/ckg/sparql
+## Usage eg. java -jar fuseki-server.jar --config=/home/sample/fuseki_config.ttl
+
+PREFIX : <#>
+PREFIX fuseki: <http://jena.apache.org/fuseki#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX tdb: <http://jena.hpl.hp.com/2008/tdb#>
+PREFIX ja: <http://jena.hpl.hp.com/2005/11/Assembler#>
+
+[] rdf:type fuseki:Server ;
+ fuseki:services (
+ <#service_tdb>
+ ) .
+
+<#service_tdb> rdf:type fuseki:Service ;
+ rdfs:label "KMS TDB SPARQL Endpoint Service" ;
+## Fuseki URL path name, eg. http://127.0.0.1:3030/sample/sparql
+ fuseki:name "sample" ;
+ fuseki:serviceQuery "sparql" ;
+# fuseki:serviceQuery "query" ;
+# fuseki:serviceUpdate "update" ;
+# fuseki:serviceUpload "upload" ;
+# fuseki:serviceReadWriteGraphStore "data" ;
+# fuseki:serviceReadGraphStore "get" ;
+ fuseki:dataset <#dataset_tdb> ;
+ .
+
+<#dataset_tdb> rdf:type tdb:DatasetTDB ;
+## JENA TDB directory path
+ tdb:location "/home/sample/TDB_Directory" ;
+ tdb:unionDefaultGraph false ;
+## Query timeout on this dataset, eg. 5000 in milliseconds
+ ja:context [ ja:cxtName "arq:queryTimeout" ; ja:cxtValue "5000" ] ;
+ .
