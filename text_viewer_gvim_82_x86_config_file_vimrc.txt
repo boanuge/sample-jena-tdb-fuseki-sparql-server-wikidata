@@ -1,3 +1,4 @@
+" Download link = https://github.com/vim/vim-win32-installer/releases/download/v8.2.0012/gvim_8.2.0012_x86_signed.exe
 " Vim with all enhancements
 source $VIMRUNTIME/vimrc_example.vim
 
