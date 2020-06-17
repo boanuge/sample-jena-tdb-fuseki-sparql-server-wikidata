@@ -45,6 +45,12 @@ import com.samsung.ckg.tdb.TDBConnection;
 
 public class OntologyModeling {
 
+	public class Class_csv { // Default encoding is UTF-8
+		public String filmUID;
+		public String movieTitle;
+		public String movieID;
+	}
+
 	public static void main(String[] args) {
 
 		Logger logger = LoggerFactory.getLogger(OntologyModeling.class);
@@ -69,6 +75,23 @@ public class OntologyModeling {
 			e.printStackTrace();
 		}
 		 */
+	}
+
+	public static void writeFile2CSV(String fileName, ArrayList<Class_csv> csvData) {
+		CsvSchema schema = CsvSchema.builder()
+				.addColumn( "filmUID" )
+				.addColumn( "movieTitle" )
+				.addColumn( "movieID" )
+				.setUseHeader( false )
+				.build();
+		CsvMapper csvMapper = new CsvMapper();
+		csvMapper.enable(CsvParser.Feature.WRAP_AS_ARRAY);
+		ObjectWriter objectWriter = csvMapper.writer(schema);
+		try {
+			objectWriter.writeValue(new File( fileName ), csvData);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 
 	public static void readCSVSample() throws IOException {
