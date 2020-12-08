@@ -75,6 +75,37 @@ public class OntologyModeling {
 			e.printStackTrace();
 		}
 		 */
+		
+		/* Sample code for JENA triple store
+		long startTime = 0L;
+		long endTime = 0L;
+		startTime = System.currentTimeMillis();
+		String startDateTime = new SimpleDateFormat("yyyy-MM-dd '('HH:mm:ss.SSS')'").format(new Date());
+		logger.info("BEGIN: TDB test operation @ " + startDateTime);
+		
+		//Below code is for small number of triples around 10 million
+		//TDBConnection tdb = new TDBConnection("TDB_Directory");
+		//Model model = ModelFactory.createOntologyModel(OntModelSpec.OWL_DL_MEM);
+		//tdb.updateTDBModel(model);
+		//tdb.close();
+		
+		//Below code is for large number of triples more than 10 million
+		Dataset dataset = TDBFactory.createDataset("TDB_Directory");
+		Model tdbModel = dataset.getDefaultModel();
+		//Not using full description logics reasoning for memory issue (below code only inferring hierarchy + equivalence logic)
+		OntModel inferredModel = ModelFactory.createOntologyModel(OntModelSpec.OWL_MEM_MICRO_RULE_INF, model);
+		dataset.begin(ReadWrite.WRITE);
+		//In case of over 100 million triples, then java.lang.OutOfMemoryError: Java heap space (even with vm arguments: -Xmx30000m)
+		tdbModel.add(inferredModel);
+		dataset.commit();
+		dataset.end();
+		dataset.close();
+		
+		String endDateTime = new SimpleDateFormat("yyyy.MM.dd '('HH:mm:ss.SSS')'").format(new Date());
+		logger.info("END: TDB test operation @ " + endDateTime);
+		endTime = System.currentTimeMillis();
+		logger.info("Execution Duration = " + executionTime(endTime - startTime));
+		 */
 	}
 
 	public static void writeFile2CSV(String fileName, ArrayList<Class_csv> csvData) {
